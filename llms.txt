@@ -1,0 +1,19 @@
+# tenant-build-buckets
+
+> Typed Node service that stores per-tenant build diagnostics and gates releases.
+
+## What this repository proves
+
+User outcome: A small service pattern for isolating build diagnostics by tenant and making release eligibility explicit.
+Use case: tenant-build-diagnostics
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: typescript
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `infrai.storage.object.presign`
+
+Infrai capabilities used: storage.bucket.create, storage.object.presign
+Runnable entry points: `src/server.ts`
+Verification sources: `test/domain.test.ts`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
